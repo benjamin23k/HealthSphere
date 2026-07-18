@@ -1,0 +1,45 @@
+:root {
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --border: #d9e2e1;
+  --danger: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); font-family: "Segoe UI", system-ui, sans-serif; color: #1f2937; }
+
+.app-shell { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+.app-header h1 { margin: 0; color: var(--primary-dark); font-size: 1.6rem; }
+.subtitle { margin: 4px 0 20px; color: #6b7280; font-size: 0.9rem; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab {
+  padding: 8px 16px; border: 1px solid var(--border); background: var(--card);
+  border-radius: 8px; cursor: pointer; font-weight: 500; color: #374151;
+}
+.tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.page h2 { margin-top: 0; color: var(--primary-dark); }
+
+.form-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+.form-row input, .form-row select {
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; min-width: 140px;
+}
+.form-row button {
+  padding: 8px 14px; background: var(--primary); border: none; color: white; border-radius: 6px; cursor: pointer;
+}
+.form-row button:hover { background: var(--primary-dark); }
+
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+th { color: #6b7280; font-weight: 600; }
+
+td button { margin-right: 6px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); background: #f9fafb; cursor: pointer; }
+td button:hover { background: #e5e7eb; }
+
+.error { color: var(--danger); font-weight: 500; }
