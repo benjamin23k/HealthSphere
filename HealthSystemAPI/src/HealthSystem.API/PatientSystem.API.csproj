@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>patient-system-api-secrets</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatientSystem.Domain\PatientSystem.Domain.csproj" />
+    <ProjectReference Include="..\PatientSystem.DTOs\PatientSystem.DTOs.csproj" />
+    <ProjectReference Include="..\PatientSystem.DataAccess\PatientSystem.DataAccess.csproj" />
+    <ProjectReference Include="..\PatientSystem.Business\PatientSystem.Business.csproj" />
+  </ItemGroup>
+</Project>
