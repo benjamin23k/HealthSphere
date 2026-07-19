@@ -20,7 +20,7 @@ public class DepartmentService : BaseCrudService<Department, DepartmentReadDto, 
     {
         var existing = await _departmentRepository.GetByNameAsync(dto.Name);
         if (existing is not null)
-            throw new InvalidOperationException($"Ya existe un departamento con el nombre '{dto.Name}'.");
+            throw new InvalidOperationException($"There is already a department with the name '{dto.Name}'.");
 
         return await base.CreateAsync(dto);
     }
