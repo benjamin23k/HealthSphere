@@ -19,7 +19,7 @@ public class AddressesController : CrudControllerBase<AddressReadDto, AddressCre
     {
         var address = await _addressService.GetByPatientIdAsync(patientId);
         if (address is null)
-            return NotFound(ApiResponse<AddressReadDto>.Fail("No se encontro direccion para ese paciente."));
+            return NotFound(ApiResponse<AddressReadDto>.Fail("In the directional encounter for that patient."));
 
         return Ok(ApiResponse<AddressReadDto>.Ok(address));
     }
