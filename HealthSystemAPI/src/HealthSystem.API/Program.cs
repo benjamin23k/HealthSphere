@@ -42,53 +42,14 @@ builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
-builder.Services.AddScoped<IBaseCrudService<DepartmentReadDto, DepartmentCreateDto, DepartmentUpdateDto>>(sp =>
-    new BaseCrudService<Department, DepartmentReadDto, DepartmentCreateDto, DepartmentUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Departments,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<InsuranceReadDto, InsuranceCreateDto, InsuranceUpdateDto>>(sp =>
-    new BaseCrudService<Insurance, InsuranceReadDto, InsuranceCreateDto, InsuranceUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Insurances,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<AddressReadDto, AddressCreateDto, AddressUpdateDto>>(sp =>
-    new BaseCrudService<Address, AddressReadDto, AddressCreateDto, AddressUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Addresses,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<MedicalRecordReadDto, MedicalRecordCreateDto, MedicalRecordUpdateDto>>(sp =>
-    new BaseCrudService<MedicalRecord, MedicalRecordReadDto, MedicalRecordCreateDto, MedicalRecordUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().MedicalRecords,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<DiagnosisReadDto, DiagnosisCreateDto, DiagnosisUpdateDto>>(sp =>
-    new BaseCrudService<Diagnosis, DiagnosisReadDto, DiagnosisCreateDto, DiagnosisUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Diagnoses,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<TreatmentReadDto, TreatmentCreateDto, TreatmentUpdateDto>>(sp =>
-    new BaseCrudService<Treatment, TreatmentReadDto, TreatmentCreateDto, TreatmentUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Treatments,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<MedicationReadDto, MedicationCreateDto, MedicationUpdateDto>>(sp =>
-    new BaseCrudService<Medication, MedicationReadDto, MedicationCreateDto, MedicationUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Medications,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
-
-builder.Services.AddScoped<IBaseCrudService<PrescriptionReadDto, PrescriptionCreateDto, PrescriptionUpdateDto>>(sp =>
-    new BaseCrudService<Prescription, PrescriptionReadDto, PrescriptionCreateDto, PrescriptionUpdateDto>(
-        sp.GetRequiredService<IUnitOfWork>().Prescriptions,
-        sp.GetRequiredService<IUnitOfWork>(),
-        sp.GetRequiredService<AutoMapper.IMapper>()));
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IInsuranceService, InsuranceService>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
+builder.Services.AddScoped<IDiagnosisService, DiagnosisService>();
+builder.Services.AddScoped<ITreatmentService, TreatmentService>();
+builder.Services.AddScoped<IMedicationService, MedicationService>();
+builder.Services.AddScoped<IPrescriptionService, PrescriptionService>();
 
 var app = builder.Build();
 
