@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Title = "Patient System API",
-        Version = "v1"
+        
     });
 });
 
