@@ -19,7 +19,7 @@ public class InsurancesController : CrudControllerBase<InsuranceReadDto, Insuran
     {
         var insurance = await _insuranceService.GetByProviderNameAsync(providerName);
         if (insurance is null)
-            return NotFound(ApiResponse<InsuranceReadDto>.Fail("No se encontro esa aseguradora."));
+            return NotFound(ApiResponse<InsuranceReadDto>.Fail("In the event of that insurer."));
 
         return Ok(ApiResponse<InsuranceReadDto>.Ok(insurance));
     }
